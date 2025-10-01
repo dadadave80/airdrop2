@@ -1,5 +1,6 @@
 use bs58;
-use solana_sdk::signature::{Keypair, Signer};
+use solana_client::rpc_client::RpcClient;
+use solana_sdk::signature::{Keypair, Signer, read_keypair_file};
 use std::io::{self, BufRead};
 
 #[cfg(test)]
