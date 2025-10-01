@@ -50,7 +50,9 @@ version = "0.1.0"
 dependencies = [
  "bs58",
  "solana-client",
+ "solana-program",
  "solana-sdk",
+ "solana-system-interface",
 ]
 
 [[package]]
