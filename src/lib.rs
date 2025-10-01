@@ -7,6 +7,8 @@ use std::io::{self, BufRead};
 mod tests {
     use super::*;
 
+    const RPC_URL: &str = "https://api.devnet.solana.com";
+
     #[test]
     fn keygen() {
         // Create a new keypair
