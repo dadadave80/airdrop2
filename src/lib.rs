@@ -2,7 +2,8 @@ use solana_sdk::signature::{Keypair, Signer};
 
 #[cfg(test)]
 mod tests {
-    use solana_sdk;
+    use super::*;
+
     #[test]
     fn keygen() {}
     #[test]
