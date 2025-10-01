@@ -1,4 +1,6 @@
+use bs58;
 use solana_sdk::signature::{Keypair, Signer};
+use std::io::{self, BufRead};
 
 #[cfg(test)]
 mod tests {
