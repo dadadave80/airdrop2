@@ -2,12 +2,13 @@ use bs58;
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::{
     hash::hash,
+    instruction::{AccountMeta, Instruction},
     message::Message,
     pubkey::Pubkey,
     signature::{Keypair, Signer, read_keypair_file},
     transaction::Transaction,
 };
-use solana_system_interface::instruction::transfer;
+use solana_system_interface::{instruction::transfer, program as system_program};
 use std::io::{self, BufRead};
 use std::str::FromStr;
 
