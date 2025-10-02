@@ -1,7 +1,15 @@
 use bs58;
 use solana_client::rpc_client::RpcClient;
-use solana_sdk::signature::{Keypair, Signer, read_keypair_file};
+use solana_sdk::{
+    hash::hash,
+    message::Message,
+    pubkey::Pubkey,
+    signature::{Keypair, Signer, read_keypair_file},
+    transaction::Transaction,
+};
+use solana_system_interface::instruction::transfer;
 use std::io::{self, BufRead};
+use std::str::FromStr;
 
 #[cfg(test)]
 mod tests {
