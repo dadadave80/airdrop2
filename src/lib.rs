@@ -1,4 +1,3 @@
-use bs58;
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::{
     hash::hash,
@@ -11,6 +10,8 @@ use solana_sdk::{
 use solana_system_interface::{instruction::transfer, program as system_program};
 use std::io::{self, BufRead};
 use std::str::FromStr;
+
+mod wallet_to_base58;
 
 #[cfg(test)]
 mod tests {
@@ -35,26 +36,6 @@ mod tests {
         println!("Your wallet file format is:");
         let wallet = bs58::decode(base58).into_vec().unwrap();
         println!("{:?}", wallet);
-    }
-
-    #[test]
-    fn wallet_to_base58() {
-        println!("Input your private key as a JSON byte array (e.g. [12,34,...]):");
-        let stdin = io::stdin();
-        let wallet = stdin
-            .lock()
-            .lines()
-            .next()
-            .unwrap()
-            .unwrap()
-            .trim_start_matches('[')
-            .trim_end_matches(']')
-            .split(',')
-            .map(|s| s.trim().parse::<u8>().unwrap())
-            .collect::<Vec<u8>>();
-        println!("Your Base58-encoded private key is:");
-        let base58 = bs58::encode(wallet).into_string();
-        println!("{:?}", base58);
     }
 
     #[test]
