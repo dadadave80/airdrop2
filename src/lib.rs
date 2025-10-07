@@ -20,15 +20,6 @@ mod tests {
     const RPC_URL: &str = "https://api.devnet.solana.com";
 
     #[test]
-    fn keygen() {
-        // Create a new keypair
-        let kp = Keypair::new();
-        println!("You've generated a new Solana wallet: {}\n", kp.pubkey());
-        println!("To save your wallet, copy and paste the following into a JSON file:");
-        println!("{:?}", kp.to_bytes());
-    }
-
-    #[test]
     fn base58_to_wallet() {
         println!("Input your private key as a base58 string:");
         let stdin = io::stdin();
